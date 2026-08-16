@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Career Match | CareerGuide AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+<header>
+
+    <nav>
+
+        <div class="logo">
+            CareerGuide AI
+        </div>
+
+        <div>
+            <a href="/">Home</a>
+        </div>
+
+    </nav>
+
+</header>
+
+
+<section class="result-page">
+
+    <div class="result-card">
+
+        <!-- HEADER -->
+
+        <div class="result-tag">
+            ✨ AI ANALYSIS COMPLETE
+        </div>
+
+        <p class="hello">
+            Hey {{ name }} 👋
+        </p>
+
+        <h1>
+            Your career<br>
+            <span>matches are here.</span>
+        </h1>
+
+        <p class="result-description">
+            Our AI-based recommendation system analyzed your
+            interests, skills, academic performance and career
+            goals to find your strongest career matches.
+        </p>
+
+
+      <!-- TOP 3 CAREERS -->
+
+<div class="recommendations">
+
+    {% for recommendation in recommendations %}
+
+    <div class="recommendation-card {% if loop.first %}top-career{% endif %}">
+
+        <div class="rank">
+            {% if loop.index == 1 %}
+                🥇
+            {% elif loop.index == 2 %}
+                🥈
+            {% else %}
+                🥉
+            {% endif %}
+        </div>
+
+        <div class="recommendation-info">
+
+            <p class="recommendation-label">
+                {% if loop.first %}
+                    TOP RECOMMENDATION
+                {% else %}
+                    RECOMMENDED CAREER
+                {% endif %}
+            </p>
+
+            <h2>
+                {{ recommendation.career }}
+            </h2>
+
+        </div>
+
+        <div class="score">
+
+            <strong>
+                {{ recommendation.score }}%
+            </strong>
+
+            <span>
+                Match
+            </span>
+
+            <div class="score-bar">
+                <div
+                    class="score-fill"
+                    style="width: {{ recommendation.score }}%;">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>  
+<!-- PERSONALIZED PROFILE -->
+
+<div class="ai-insight">
+
+    <div class="insight-icon">
+        🤖
+    </div>
+
+    <div>
+
+        <h3>
+            Your AI Profile Analysis
+        </h3>
+
+        <p>
+
+            You are interested in
+            <strong>{{ interest }}</strong>
+            and are looking for a
+            <strong>{{ career_goal|lower }}</strong>
+            career.
+
+            Your academic performance is
+            <strong>{{ academic_performance }}</strong>,
+            while your programming skills are rated
+            <strong>{{ programming }}</strong>.
+
+            Your problem-solving ability is
+            <strong>{{ problem_solving }}</strong>
+            and your communication skills are
+            <strong>{{ communication }}</strong>.
+
+            Based on these factors, our recommendation
+            system has identified the career paths below
+            as your strongest matches.
+
+        </p>
+
+    </div>
+
+</div>
+        <!-- TOP CAREER DETAILS -->
+
+        {% set top_career = recommendations[0].career %}
+
+        <div class="career-details">
+
+            <div class="details-header">
+
+                <span class="details-icon">💡</span>
+
+                <div>
+
+                    <p class="section-label">
+                        YOUR STRONGEST MATCH
+                    </p>
+
+                    <h2>
+                        Why {{ top_career }}?
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            {% if top_career == "Machine Learning Engineer" %}
+
+                <p>
+                    Your profile shows a strong combination of
+                    technical interest, programming ability and
+                    problem-solving skills. These qualities are
+                    highly useful when building and training
+                    machine learning systems.
+                </p>
+
+                <h3>🛠️ Skills to develop</h3>
+
+                <div class="skill-tags">
+                    <span>Python</span>
+                    <span>Machine Learning</span>
+                    <span>Statistics</span>
+                    <span>NumPy</span>
+                    <span>Scikit-learn</span>
+                </div>
+
+                <h3>📚 Suggested learning path</h3>
+
+                <div class="learning-path">
+                    <span>Python</span>
+                    <b>→</b>
+                    <span>Statistics</span>
+                    <b>→</b>
+                    <span>Machine Learning</span>
+                    <b>→</b>
+                    <span>Projects</span>
+                </div>
+
+
+            {% elif top_career == "Data Scientist" %}
+
+                <p>
+                    Your interest in data and strong analytical
+                    abilities make Data Science a suitable career
+                    direction. This field combines programming,
+                    statistics and data-driven decision making.
+                </p>
+
+                <h3>🛠️ Skills to develop</h3>
+
+                <div class="skill-tags">
+                    <span>Python</span>
+                    <span>SQL</span>
+                    <span>Statistics</span>
+                    <span>Data Visualization</span>
+                    <span>Machine Learning</span>
+                </div>
+
+                <h3>📚 Suggested learning path</h3>
+
+                <div class="learning-path">
+                    <span>Python</span>
+                    <b>→</b>
+                    <span>SQL</span>
+                    <b>→</b>
+                    <span>Statistics</span>
+                    <b>→</b>
+                    <span>ML Projects</span>
+                </div>
+
+
+            {% elif top_career == "AI Engineer" %}
+
+                <p>
+                    Your interest in Artificial Intelligence and
+                    technical skills can be a strong foundation
+                    for developing intelligent applications and
+                    AI-powered solutions.
+                </p>
+
+                <h3>🛠️ Skills to develop</h3>
+
+                <div class="skill-tags">
+                    <span>Python</span>
+                    <span>AI</span>
+                    <span>Machine Learning</span>
+                    <span>Deep Learning</span>
+                    <span>APIs</span>
+                </div>
+
+                <h3>📚 Suggested learning path</h3>
+
+                <div class="learning-path">
+                    <span>Python</span>
+                    <b>→</b>
+                    <span>ML</span>
+                    <b>→</b>
+                    <span>Deep Learning</span>
+                    <b>→</b>
+                    <span>AI Projects</span>
+                </div>
+
+
+            {% elif top_career == "AI Researcher" %}
+
+                <p>
+                    Your interest in AI and research-oriented goals
+                    make AI research a potential career direction.
+                    Curiosity, mathematics and experimentation are
+                    especially valuable in this field.
+                </p>
+
+                <h3>🛠️ Skills to develop</h3>
+
+                <div class="skill-tags">
+                    <span>Python</span>
+                    <span>Mathematics</span>
+                    <span>Deep Learning</span>
+                    <span>Research</span>
+                    <span>Statistics</span>
+                </div>
+
+                <h3>📚 Suggested learning path</h3>
+
+                <div class="learning-path">
+                    <span>Math</span>
+                    <b>→</b>
+                    <span>Python</span>
+                    <b>→</b>
+                    <span>Deep Learning</span>
+                    <b>→</b>
+                    <span>Research</span>
+                </div>
+
+
+            {% elif top_career == "Data Analyst" %}
+
+                <p>
+                    Your profile can suit a career focused on
+                    understanding data, identifying patterns and
+                    communicating useful insights to support
+                    decision making.
+                </p>
+
+                <h3>🛠️ Skills to develop</h3>
+
+                <div class="skill-tags">
+                    <span>Excel</span>
+                    <span>SQL</span>
+                    <span>Python</span>
+                    <span>Power BI</span>
+                    <span>Statistics</span>
+                </div>
+
+                <h3>📚 Suggested learning path</h3>
+
+                <div class="learning-path">
+                    <span>Excel</span>
+                    <b>→</b>
+                    <span>SQL</span>
+                    <b>→</b>
+                    <span>Power BI</span>
+                    <b>→</b>
+                    <span>Projects</span>
+                </div>
+
+
+            {% elif top_career == "Web Developer" %}
+
+                <p>
+                    Your interest in Web Development makes this a
+                    natural career path for building websites and
+                    interactive digital experiences.
+                </p>
+
+                <h3>🛠️ Skills to develop</h3>
+
+                <div class="skill-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>React</span>
+                    <span>Git</span>
+                </div>
+
+                <h3>📚 Suggested learning path</h3>
+
+                <div class="learning-path">
+                    <span>HTML/CSS</span>
+                    <b>→</b>
+                    <span>JavaScript</span>
+                    <b>→</b>
+                    <span>React</span>
+                    <b>→</b>
+                    <span>Projects</span>
+                </div>
+
+
+            {% elif top_career == "UI UX Developer" %}
+
+                <p>
+                    Your interest in creative work and web
+                    development can align well with designing
+                    engaging and user-friendly digital products.
+                </p>
+
+                <h3>🛠️ Skills to develop</h3>
+
+                <div class="skill-tags">
+                    <span>Figma</span>
+                    <span>UI Design</span>
+                    <span>UX Research</span>
+                    <span>Prototyping</span>
+                    <span>HTML/CSS</span>
+                </div>
+
+                <h3>📚 Suggested learning path</h3>
+
+                <div class="learning-path">
+                    <span>Design Basics</span>
+                    <b>→</b>
+                    <span>Figma</span>
+                    <b>→</b>
+                    <span>UX</span>
+                    <b>→</b>
+                    <span>Portfolio</span>
+                </div>
+
+
+            {% elif top_career == "Full Stack Developer" %}
+
+                <p>
+                    Your strong technical profile can be useful
+                    for developing both the frontend and backend
+                    sides of modern web applications.
+                </p>
+
+                <h3>🛠️ Skills to develop</h3>
+
+                <div class="skill-tags">
+                    <span>HTML/CSS</span>
+                    <span>JavaScript</span>
+                    <span>React</span>
+                    <span>Python</span>
+                    <span>Databases</span>
+                </div>
+
+                <h3>📚 Suggested learning path</h3>
+
+                <div class="learning-path">
+                    <span>Frontend</span>
+                    <b>→</b>
+                    <span>Backend</span>
+                    <b>→</b>
+                    <span>Database</span>
+                    <b>→</b>
+                    <span>Full Projects</span>
+                </div>
+
+
+            {% elif top_career == "Cyber Security Analyst" %}
+
+                <p>
+                    Your interest in Cyber Security combined with
+                    technical and problem-solving abilities can
+                    make security analysis a strong career direction.
+                </p>
+
+                <h3>🛠️ Skills to develop</h3>
+
+                <div class="skill-tags">
+                    <span>Networking</span>
+                    <span>Linux</span>
+                    <span>Cyber Security</span>
+                    <span>Python</span>
+                    <span>Ethical Hacking</span>
+                </div>
+
+                <h3>📚 Suggested learning path</h3>
+
+                <div class="learning-path">
+                    <span>Networking</span>
+                    <b>→</b>
+                    <span>Linux</span>
+                    <b>→</b>
+                    <span>Security</span>
+                    <b>→</b>
+                    <span>Labs</span>
+                </div>
+
+
+            {% elif top_career == "Security Researcher" %}
+
+                <p>
+                    Your interest in security and research can
+                    provide a foundation for investigating threats,
+                    vulnerabilities and emerging security problems.
+                </p>
+
+                <h3>🛠️ Skills to develop</h3>
+
+                <div class="skill-tags">
+                    <span>Cyber Security</span>
+                    <span>Networking</span>
+                    <span>Linux</span>
+                    <span>Cryptography</span>
+                    <span>Research</span>
+                </div>
+
+                <h3>📚 Suggested learning path</h3>
+
+                <div class="learning-path">
+                    <span>Networking</span>
+                    <b>→</b>
+                    <span>Security</span>
+                    <b>→</b>
+                    <span>Research</span>
+                    <b>→</b>
+                    <span>Security Labs</span>
+                </div>
+
+
+            {% elif top_career == "Security Engineer" %}
+
+                <p>
+                    Your technical profile and interest in
+                    cybersecurity can be useful for designing and
+                    maintaining secure systems and infrastructure.
+                </p>
+
+                <h3>🛠️ Skills to develop</h3>
+
+                <div class="skill-tags">
+                    <span>Networking</span>
+                    <span>Linux</span>
+                    <span>Cloud Security</span>
+                    <span>Python</span>
+                    <span>Security Tools</span>
+                </div>
+
+                <h3>📚 Suggested learning path</h3>
+
+                <div class="learning-path">
+                    <span>Networking</span>
+                    <b>→</b>
+                    <span>Linux</span>
+                    <b>→</b>
+                    <span>Cloud</span>
+                    <b>→</b>
+                    <span>Security</span>
+                </div>
+
+
+            {% elif top_career == "Mobile App Developer" %}
+
+                <p>
+                    Your interest in app development can translate
+                    into a career creating useful and engaging
+                    mobile applications for users.
+                </p>
+
+                <h3>🛠️ Skills to develop</h3>
+
+                <div class="skill-tags">
+                    <span>Flutter</span>
+                    <span>Android</span>
+                    <span>Java/Kotlin</span>
+                    <span>UI Design</span>
+                    <span>APIs</span>
+                </div>
+
+                <h3>📚 Suggested learning path</h3>
+
+                <div class="learning-path">
+                    <span>Programming</span>
+                    <b>→</b>
+                    <span>Flutter/Android</span>
+                    <b>→</b>
+                    <span>APIs</span>
+                    <b>→</b>
+                    <span>Apps</span>
+                </div>
+
+            {% endif %}
+
+        </div>
+
+
+        <!-- BUTTONS -->
+
+        <div class="result-buttons">
+
+            <a href="/assessment"
+               class="again-button">
+
+                🔄 Try Again
+
+            </a>
+
+            <a href="/"
+               class="home-button">
+
+                🏠 Back Home
+
+            </a>
+
+        </div>
+
+
+        <p class="disclaimer">
+
+            CareerGuide AI provides recommendations for
+            educational and career exploration purposes.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        CareerGuide AI • Student Career Recommendation System
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

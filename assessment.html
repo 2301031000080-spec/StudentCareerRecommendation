@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Career Assessment | CareerGuide AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+<header>
+
+    <nav>
+
+        <div class="logo">
+            CareerGuide AI
+        </div>
+
+        <div>
+            <a href="/">Home</a>
+        </div>
+
+    </nav>
+
+</header>
+
+
+<section class="assessment-page">
+
+    <div class="assessment">
+
+        <div class="hero-tag">
+            AI CAREER ASSESSMENT
+        </div>
+
+        <h1>
+            Let's find your<br>
+            <span>career match.</span>
+        </h1>
+
+        <p>
+            Answer a few simple questions about yourself.
+            Our AI-based recommendation system will analyze
+            your profile and suggest a suitable career path.
+        </p>
+
+
+        <form method="POST" action="/assessment">
+
+
+            <!-- NAME -->
+
+            <label for="name">
+                What's your name?
+            </label>
+
+            <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your name"
+                required
+            >
+
+
+            <!-- INTEREST -->
+
+            <label for="interest">
+                What area interests you the most?
+            </label>
+
+            <select
+                id="interest"
+                name="interest"
+                required>
+
+                <option value="">
+                    Select your interest
+                </option>
+
+                <option value="Artificial Intelligence">
+                    Artificial Intelligence
+                </option>
+
+                <option value="Machine Learning">
+                    Machine Learning
+                </option>
+
+                <option value="Data Science">
+                    Data Science
+                </option>
+
+                <option value="Web Development">
+                    Web Development
+                </option>
+
+                <option value="Cyber Security">
+                    Cyber Security
+                </option>
+
+                <option value="App Development">
+                    App Development
+                </option>
+
+            </select>
+
+
+            <!-- ACADEMIC PERFORMANCE -->
+
+            <label for="academic_performance">
+                How would you describe your academic performance?
+            </label>
+
+            <select
+                id="academic_performance"
+                name="academic_performance"
+                required>
+
+                <option value="">
+                    Select your performance
+                </option>
+
+                <option value="Average">
+                    Average
+                </option>
+
+                <option value="Good">
+                    Good
+                </option>
+
+                <option value="High">
+                    High
+                </option>
+
+            </select>
+
+
+            <!-- PROGRAMMING -->
+
+            <label for="programming">
+                How would you rate your programming skills?
+            </label>
+
+            <select
+                id="programming"
+                name="programming"
+                required>
+
+                <option value="">
+                    Select your level
+                </option>
+
+                <option value="Beginner">
+                    Beginner
+                </option>
+
+                <option value="Intermediate">
+                    Intermediate
+                </option>
+
+                <option value="Advanced">
+                    Advanced
+                </option>
+
+            </select>
+
+
+            <!-- PROBLEM SOLVING -->
+
+            <label for="problem_solving">
+                How would you rate your problem-solving ability?
+            </label>
+
+            <select
+                id="problem_solving"
+                name="problem_solving"
+                required>
+
+                <option value="">
+                    Select your level
+                </option>
+
+                <option value="Beginner">
+                    Beginner
+                </option>
+
+                <option value="Intermediate">
+                    Good
+                </option>
+
+                <option value="Advanced">
+                    Excellent
+                </option>
+
+            </select>
+
+
+            <!-- COMMUNICATION -->
+
+            <label for="communication">
+                How would you rate your communication skills?
+            </label>
+
+            <select
+                id="communication"
+                name="communication"
+                required>
+
+                <option value="">
+                    Select your level
+                </option>
+
+                <option value="Beginner">
+                    Needs improvement
+                </option>
+
+                <option value="Intermediate">
+                    Good
+                </option>
+
+                <option value="Advanced">
+                    Excellent
+                </option>
+
+            </select>
+
+
+            <!-- CAREER GOAL -->
+
+            <label for="goal">
+                What is your main career goal?
+            </label>
+
+            <select
+                id="goal"
+                name="goal"
+                required>
+
+                <option value="">
+                    Select your goal
+                </option>
+
+                <option value="High salary">
+                    High-paying career
+                </option>
+
+                <option value="Creative work">
+                    Creative work
+                </option>
+
+                <option value="Technical career">
+                    Technical career
+                </option>
+
+                <option value="Research">
+                    Research & innovation
+                </option>
+
+                <option value="Stable career">
+                    Stable career
+                </option>
+
+            </select>
+
+
+            <!-- SUBMIT -->
+
+            <button type="submit">
+                Analyze My Profile ✨
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        CareerGuide AI • Student Career Recommendation System
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
