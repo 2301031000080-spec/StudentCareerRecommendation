@@ -1,0 +1,2757 @@
+/* ================================
+   CAREERGUIDE AI - MODERN DESIGN
+   ================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #080812;
+    color: #f5f5ff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ---------- NAVBAR ---------- */
+
+header {
+    background: rgba(8, 8, 18, 0.82);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 22px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 28px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #9d7cff;
+}
+
+.logo,
+nav strong {
+    font-size: 21px;
+    font-weight: 800;
+    color: white;
+}
+
+/* ---------- HERO ---------- */
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 90px 20px;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(112, 68, 255, 0.28), transparent 30%),
+        radial-gradient(circle at 80% 30%, rgba(0, 174, 255, 0.20), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(191, 0, 255, 0.15), transparent 35%),
+        #080812;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: #744cff;
+    filter: blur(180px);
+    opacity: 0.16;
+    border-radius: 50%;
+    top: -150px;
+    left: -100px;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background: #00c8ff;
+    filter: blur(180px);
+    opacity: 0.12;
+    border-radius: 50%;
+    bottom: -150px;
+    right: -100px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+}
+
+.hero .tag,
+.hero-tag {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid rgba(157, 124, 255, 0.4);
+    border-radius: 50px;
+    background: rgba(157, 124, 255, 0.08);
+    color: #bca8ff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(50px, 7vw, 88px);
+    line-height: 0.98;
+    letter-spacing: -4px;
+    margin-bottom: 28px;
+    font-weight: 850;
+}
+
+.hero h1 span {
+    background: linear-gradient(
+        90deg,
+        #a78bfa,
+        #60a5fa,
+        #c084fc
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: auto;
+    font-size: 18px;
+    color: #a7a7bd;
+}
+
+/* ---------- BUTTON ---------- */
+
+button,
+.btn,
+.hero a,
+a.button {
+    display: inline-block;
+    margin-top: 32px;
+    padding: 15px 27px;
+    border-radius: 14px;
+    border: none;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
+
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #2563eb
+    );
+
+    box-shadow:
+        0 10px 30px rgba(99, 70, 255, 0.3);
+
+    transition: 0.3s ease;
+}
+
+button:hover,
+.btn:hover,
+.hero a:hover,
+a.button:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 15px 40px rgba(99, 70, 255, 0.45);
+}
+
+/* ---------- SECTIONS ---------- */
+
+section {
+    padding: 90px 25px;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+}
+
+section > p {
+    text-align: center;
+    color: #9292a8;
+    max-width: 650px;
+    margin: auto;
+}
+
+/* ---------- HOW IT WORKS ---------- */
+
+.steps,
+.cards,
+.features {
+    max-width: 1100px;
+    margin: 55px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.step,
+.card,
+.feature {
+    padding: 32px;
+    min-height: 220px;
+
+    background: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 24px;
+
+    backdrop-filter: blur(15px);
+
+    transition: 0.35s ease;
+}
+
+.step:hover,
+.card:hover,
+.feature:hover {
+    transform: translateY(-8px);
+    border-color: rgba(139, 92, 246, 0.5);
+    background: rgba(139, 92, 246, 0.08);
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.step span,
+.card span {
+    display: inline-flex;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+
+    background: rgba(124, 58, 237, 0.15);
+    color: #a78bfa;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.step h3,
+.card h3,
+.feature h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.step p,
+.card p,
+.feature p {
+    color: #9292a8;
+    font-size: 15px;
+}
+
+/* ---------- ASSESSMENT AREA ---------- */
+
+.assessment,
+.form-container,
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 40px;
+
+    background: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 28px;
+
+    backdrop-filter: blur(20px);
+}
+
+/* ---------- FORM ---------- */
+
+form label {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    color: #d9d9e8;
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 14px 16px;
+
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+
+    color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.12);
+}
+
+option {
+    background: #151522;
+    color: white;
+}
+
+/* ---------- RESULT PAGE ---------- */
+
+.result,
+.recommendation {
+    max-width: 900px;
+    margin: 70px auto;
+    padding: 45px;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(124, 58, 237, 0.15),
+            transparent 35%
+        ),
+        rgba(255, 255, 255, 0.045);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 28px;
+}
+
+/* ---------- FOOTER ---------- */
+
+footer {
+    padding: 35px;
+    text-align: center;
+    color: #77778c;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    background: #06060d;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 800px) {
+
+    .steps,
+    .cards,
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+        letter-spacing: -2px;
+    }
+
+    nav {
+        padding: 18px;
+    }
+
+    nav a {
+        margin-left: 12px;
+    }
+
+    section h2 {
+        font-size: 34px;
+    }
+}
+
+/* ---------- ASSESSMENT PAGE ---------- */
+
+.assessment-page {
+    min-height: calc(100vh - 80px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(112, 68, 255, 0.20),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(0, 174, 255, 0.14),
+            transparent 30%
+        ),
+        #080812;
+}
+
+.assessment {
+    width: 100%;
+    max-width: 850px;
+}
+
+.assessment h1 {
+    font-size: 52px;
+    line-height: 1.05;
+    margin: 15px 0 20px;
+    letter-spacing: -2px;
+}
+
+.assessment h1 span {
+    background: linear-gradient(
+        90deg,
+        #a78bfa,
+        #60a5fa,
+        #c084fc
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.assessment > p {
+    text-align: left;
+    margin: 0 0 35px;
+    color: #9292a8;
+}
+
+.assessment form {
+    display: grid;
+    gap: 5px;
+}
+
+.assessment button {
+    width: fit-content;
+    margin-top: 25px;
+}
+
+/* =========================================
+   RESULT PAGE
+========================================= */
+
+.result-page {
+    min-height: 90vh;
+    padding: 70px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.result-card {
+    width: 100%;
+    max-width: 900px;
+    padding: 55px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+
+.result-tag {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: #f0e9ff;
+    margin-bottom: 20px;
+}
+
+
+.hello {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+
+.result-card h1 {
+    font-size: 52px;
+    line-height: 1.05;
+    margin: 10px 0 20px;
+}
+
+
+.result-card h1 span {
+    color: #7c3aed;
+}
+
+
+.result-description {
+    max-width: 700px;
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+
+/* CAREER */
+
+.career-box {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 28px;
+    border-radius: 22px;
+    background: linear-gradient(
+        135deg,
+        #f5f0ff,
+        #eee7ff
+    );
+    margin-bottom: 25px;
+}
+
+
+.career-icon {
+    font-size: 48px;
+}
+
+
+.small-title {
+    margin: 0 0 5px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+
+.career-box h2 {
+    margin: 0;
+    font-size: 30px;
+}
+
+
+/* MATCH */
+
+.match-box {
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid #e5e5e5;
+    margin-bottom: 30px;
+}
+
+
+.match-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.match-text span {
+    font-weight: 600;
+}
+
+
+.match-text strong {
+    font-size: 28px;
+    color: #7c3aed;
+}
+
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #eeeeee;
+    border-radius: 20px;
+    margin: 15px 0;
+    overflow: hidden;
+}
+
+
+.progress {
+    width: 90%;
+    height: 100%;
+    border-radius: 20px;
+    background: #7c3aed;
+}
+
+
+.match-box p {
+    margin-bottom: 0;
+    color: #666;
+}
+
+
+/* INSIGHTS */
+
+.insights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 40px;
+}
+
+
+.insight {
+    padding: 25px;
+    border-radius: 20px;
+    background: #fafafa;
+}
+
+
+.emoji {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+
+.insight h3 {
+    margin: 0 0 8px;
+}
+
+
+.insight p {
+    margin: 0;
+    line-height: 1.6;
+    color: #666;
+}
+
+
+/* SKILLS */
+
+.skills-section {
+    margin-bottom: 35px;
+}
+
+
+.skills-section h2 {
+    margin-bottom: 15px;
+}
+
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+.skill-tags span {
+    padding: 10px 16px;
+    border-radius: 50px;
+    background: #f1edff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* BUTTONS */
+
+.result-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+
+.again-button,
+.home-button {
+    display: inline-block;
+    padding: 14px 22px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+
+.again-button {
+    background: #7c3aed;
+    color: white;
+}
+
+
+.home-button {
+    background: #eeeeee;
+    color: #222;
+}
+
+
+/* DISCLAIMER */
+
+.disclaimer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 12px;
+    color: #888;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .result-card {
+        padding: 30px 20px;
+    }
+
+
+    .result-card h1 {
+        font-size: 38px;
+    }
+
+
+    .insights {
+        grid-template-columns: 1fr;
+    }
+
+
+    .career-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+
+    .result-buttons {
+        flex-direction: column;
+    }
+
+}
+
+.career-box h2 {
+    color: #7c3aed;
+}
+
+/* Career recommendation card */
+
+.career-box {
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    color: white;
+    border: none;
+    box-shadow: 0 15px 35px rgba(124, 58, 237, 0.25);
+}
+
+.career-box .small-title {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.career-box h2 {
+    color: white;
+}
+
+.career-icon {
+    background: rgba(255, 255, 255, 0.15);
+    width: 75px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+/* ==========================================
+   FINAL RESULT PAGE FIX
+========================================== */
+
+.result-page {
+    min-height: 90vh;
+    padding: 70px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #f7f5ff;
+    color: #222222;
+}
+
+
+/* MAIN CARD */
+
+.result-card {
+    width: 100%;
+    max-width: 900px;
+    padding: 55px;
+
+    background: #ffffff !important;
+    color: #222222 !important;
+
+    border-radius: 30px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ALL TEXT INSIDE RESULT CARD */
+
+.result-card p,
+.result-card h1,
+.result-card h2,
+.result-card h3,
+.result-card span {
+    color: #222222;
+}
+
+
+/* TAG */
+
+.result-tag {
+    display: inline-block;
+
+    padding: 8px 16px;
+
+    border-radius: 50px;
+
+    background: #eee8ff;
+
+    color: #7c3aed !important;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* GREETING */
+
+.hello {
+    color: #555555 !important;
+}
+
+
+/* MAIN HEADING */
+
+.result-card h1 {
+    font-size: 52px;
+    line-height: 1.05;
+    margin: 10px 0 20px;
+
+    color: #222222 !important;
+}
+
+.result-card h1 span {
+    color: #7c3aed !important;
+}
+
+
+/* DESCRIPTION */
+
+.result-description {
+    color: #555555 !important;
+
+    max-width: 700px;
+
+    font-size: 17px;
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+}
+
+
+/* ==========================================
+   CAREER BOX
+========================================== */
+
+.career-box {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    padding: 28px;
+
+    border-radius: 22px;
+
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #a855f7
+    ) !important;
+
+    color: white !important;
+
+    margin-bottom: 25px;
+
+    box-shadow: 0 15px 35px rgba(124, 58, 237, 0.25);
+}
+
+
+.career-box p,
+.career-box h2 {
+    color: white !important;
+}
+
+
+.career-box h2 {
+    margin: 0;
+
+    font-size: 30px;
+}
+
+
+.career-box .small-title {
+    color: rgba(255,255,255,0.75) !important;
+}
+
+
+/* CAREER ICON */
+
+.career-icon {
+    width: 75px;
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.18);
+
+    font-size: 40px;
+}
+
+
+/* ==========================================
+   MATCH BOX
+========================================== */
+
+.match-box {
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background: #ffffff !important;
+
+    border: 1px solid #e5e5e5;
+
+    color: #222222 !important;
+
+    margin-bottom: 30px;
+}
+
+
+.match-box span,
+.match-box p {
+    color: #555555 !important;
+}
+
+
+.match-text strong {
+    color: #7c3aed !important;
+
+    font-size: 28px;
+}
+
+
+/* PROGRESS BAR */
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+
+    background: #e9e5f5;
+
+    border-radius: 20px;
+
+    margin: 15px 0;
+
+    overflow: hidden;
+}
+
+
+.progress {
+    width: 90%;
+    height: 100%;
+
+    border-radius: 20px;
+
+    background: #7c3aed;
+}
+
+
+/* ==========================================
+   INSIGHT CARDS
+========================================== */
+
+.insights {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 40px;
+}
+
+
+.insight {
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background: #f8f7fb !important;
+
+    color: #222222 !important;
+
+    border: 1px solid #eeeeee;
+}
+
+
+.insight h3 {
+    color: #222222 !important;
+}
+
+
+.insight p {
+    color: #666666 !important;
+
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   SKILLS
+========================================== */
+
+.skills-section h2 {
+    color: #222222 !important;
+}
+
+
+.skill-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+
+.skill-tags span {
+    padding: 10px 16px;
+
+    border-radius: 50px;
+
+    background: #eee8ff !important;
+
+    color: #6d28d9 !important;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.result-buttons {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+
+.again-button {
+    background: #7c3aed !important;
+
+    color: white !important;
+
+    padding: 14px 22px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-weight: 700;
+}
+
+
+.home-button {
+    background: #eeeeee !important;
+
+    color: #222222 !important;
+
+    padding: 14px 22px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-weight: 700;
+}
+
+
+/* ==========================================
+   DISCLAIMER
+========================================== */
+
+.disclaimer {
+    margin-top: 30px;
+
+    text-align: center;
+
+    font-size: 12px;
+
+    color: #888888 !important;
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 700px) {
+
+    .result-card {
+        padding: 30px 20px;
+    }
+
+    .result-card h1 {
+        font-size: 38px;
+    }
+
+    .insights {
+        grid-template-columns: 1fr;
+    }
+
+    .career-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .result-buttons {
+        flex-direction: column;
+    }
+
+}
+
+/* ==========================================
+   TOP 3 CAREER RECOMMENDATIONS
+========================================== */
+
+.recommendations {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 30px 0;
+}
+
+
+.recommendation-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 22px;
+
+    border-radius: 20px;
+
+    background: #f8f7fb;
+
+    border: 1px solid #eeeeee;
+
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+
+.recommendation-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* TOP CAREER */
+
+.recommendation-card.top-career {
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #a855f7
+    );
+
+    color: white;
+
+    border: none;
+
+    box-shadow:
+        0 15px 35px rgba(124, 58, 237, 0.25);
+}
+
+
+/* RANK */
+
+.rank {
+    font-size: 35px;
+
+    min-width: 50px;
+
+    text-align: center;
+}
+
+
+/* CAREER INFO */
+
+.recommendation-info {
+    flex: 1;
+}
+
+
+.recommendation-label {
+    margin: 0 0 5px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.3px;
+
+    color: #7c3aed !important;
+}
+
+
+.top-career .recommendation-label {
+    color: rgba(255,255,255,0.75) !important;
+}
+
+
+.recommendation-info h2 {
+    margin: 0;
+
+    font-size: 23px;
+
+    color: #222222 !important;
+}
+
+
+.top-career .recommendation-info h2 {
+    color: white !important;
+}
+
+
+/* SCORE */
+
+.score {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    min-width: 80px;
+}
+
+
+.score strong {
+    font-size: 25px;
+
+    color: #7c3aed;
+}
+
+
+.score span {
+    font-size: 12px;
+
+    color: #777777;
+}
+
+
+.top-career .score strong {
+    color: white;
+}
+
+
+.top-career .score span {
+    color: rgba(255,255,255,0.75);
+}
+
+
+/* ==========================================
+   AI INSIGHT
+========================================== */
+
+.ai-insight {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    padding: 24px;
+
+    margin: 25px 0 35px;
+
+    border-radius: 20px;
+
+    background: #f1edff;
+
+    border: 1px solid #e4dcff;
+}
+
+
+.insight-icon {
+    font-size: 30px;
+}
+
+
+.ai-insight h3 {
+    margin: 0 0 7px;
+
+    color: #222222 !important;
+}
+
+
+.ai-insight p {
+    margin: 0;
+
+    line-height: 1.6;
+
+    color: #555555 !important;
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+    .recommendation-card {
+        padding: 18px;
+
+        gap: 12px;
+    }
+
+
+    .rank {
+        font-size: 27px;
+
+        min-width: 35px;
+    }
+
+
+    .recommendation-info h2 {
+        font-size: 18px;
+    }
+
+
+    .score {
+        min-width: 55px;
+    }
+
+
+    .score strong {
+        font-size: 20px;
+    }
+
+}
+
+/* ==========================================
+   CAREER DETAILS
+========================================== */
+
+.career-details {
+    margin-top: 30px;
+    padding: 30px;
+
+    border-radius: 24px;
+
+    background: #f8f7ff;
+
+    border: 1px solid #e7e1ff;
+}
+
+
+.details-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+
+.details-icon {
+    font-size: 32px;
+}
+
+
+.section-label {
+    margin: 0 0 4px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.3px;
+
+    color: #7c3aed;
+}
+
+
+.details-header h2 {
+    margin: 0;
+
+    font-size: 25px;
+
+    color: #222 !important;
+}
+
+
+.career-details > p {
+    color: #555 !important;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+
+.career-details h3 {
+    margin: 25px 0 14px;
+
+    font-size: 17px;
+
+    color: #222 !important;
+}
+
+
+/* SKILL TAGS */
+
+.skill-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+
+.skill-tags span {
+    padding: 9px 15px;
+
+    border-radius: 50px;
+
+    background: white;
+
+    border: 1px solid #ded8f5;
+
+    color: #5b21b6 !important;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* LEARNING PATH */
+
+.learning-path {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.learning-path span {
+    padding: 11px 15px;
+
+    border-radius: 12px;
+
+    background: white;
+
+    border: 1px solid #ded8f5;
+
+    color: #333 !important;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+.learning-path b {
+    color: #7c3aed;
+
+    font-size: 18px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .career-details {
+        padding: 22px;
+    }
+
+    .learning-path {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .learning-path b {
+        transform: rotate(90deg);
+    }
+
+}
+
+/* ==========================================
+   COMPATIBILITY SCORE BAR
+========================================== */
+
+.score {
+    min-width: 150px;
+}
+
+.score strong {
+    display: block;
+
+    font-size: 28px;
+
+    font-weight: 800;
+
+    color: #7c3aed !important;
+}
+
+.score span {
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: 12px;
+
+    color: #777 !important;
+}
+
+.score-bar {
+    width: 150px;
+
+    height: 8px;
+
+    margin-top: 10px;
+
+    border-radius: 20px;
+
+    background: #e9e5f5;
+
+    overflow: hidden;
+}
+
+.score-fill {
+    height: 100%;
+
+    border-radius: 20px;
+
+    background: #7c3aed;
+
+    transition: width 0.8s ease;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .score {
+        min-width: 100%;
+
+        margin-top: 15px;
+    }
+
+    .score-bar {
+        width: 100%;
+    }
+
+}
+/* ==========================================
+   RECOMMENDATION CARDS
+========================================== */
+
+.recommendations {
+    width: 100%;
+    max-width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+
+
+.recommendation-card {
+    width: 100%;
+    max-width: 100%;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+}
+
+
+.recommendation-info {
+    flex: 1 1 auto;
+
+    min-width: 0;
+
+    overflow: hidden;
+}
+
+
+.recommendation-info h2 {
+    margin: 5px 0 0;
+
+    font-size: 20px;
+
+    white-space: normal;
+
+    overflow-wrap: anywhere;
+
+    word-break: break-word;
+}
+
+
+.rank {
+    flex: 0 0 auto;
+}
+
+
+.score {
+    flex: 0 0 150px;
+
+    width: 150px;
+
+    max-width: 150px;
+
+    box-sizing: border-box;
+}
+
+
+.score-bar {
+    width: 150px;
+
+    max-width: 100%;
+
+    height: 8px;
+
+    margin-top: 10px;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+.score-fill {
+    height: 100%;
+
+    max-width: 100%;
+
+    border-radius: 20px;
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 700px) {
+
+    .recommendation-card {
+        display: grid;
+
+        grid-template-columns: auto minmax(0, 1fr);
+
+        gap: 12px;
+
+        padding: 18px;
+    }
+
+
+    .recommendation-info {
+        min-width: 0;
+
+        width: 100%;
+    }
+
+
+    .score {
+        grid-column: 1 / -1;
+
+        width: 100%;
+
+        max-width: 100%;
+
+        margin-top: 5px;
+    }
+
+
+    .score-bar {
+        width: 100%;
+
+        max-width: 100%;
+    }
+
+}
+/* ==========================================
+   FINAL RESULT RECOMMENDATION FIX
+========================================== */
+
+.result-page {
+    width: 100%;
+    max-width: 100%;
+    padding: 60px 20px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.result-card {
+    width: 100% !important;
+    max-width: 900px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+}
+
+.recommendations {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    margin: 30px 0;
+}
+
+.recommendation-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+
+    box-sizing: border-box !important;
+
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 20px;
+
+    border-radius: 20px;
+
+    overflow: hidden !important;
+}
+
+.recommendation-info {
+    flex: 1 1 auto !important;
+
+    width: auto;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    overflow: hidden;
+}
+
+.recommendation-info h2 {
+    max-width: 100% !important;
+
+    font-size: 21px;
+
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.recommendation-card .score {
+    flex: 0 0 130px !important;
+
+    width: 130px !important;
+    min-width: 130px !important;
+    max-width: 130px !important;
+
+    box-sizing: border-box !important;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.recommendation-card .score strong {
+    font-size: 24px;
+}
+
+.recommendation-card .score-bar {
+    width: 130px !important;
+    max-width: 100% !important;
+}
+
+
+/* ==========================================
+   LAPTOP / TABLET
+========================================== */
+
+@media (max-width: 950px) {
+
+    .result-card {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        padding: 35px !important;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 650px) {
+
+    .result-page {
+        padding: 30px 12px;
+    }
+
+    .result-card {
+        padding: 25px 18px !important;
+    }
+
+    .recommendation-card {
+        display: grid;
+
+        grid-template-columns: 42px minmax(0, 1fr);
+
+        gap: 10px;
+
+        padding: 16px;
+    }
+
+    .rank {
+        width: 42px;
+        min-width: 42px;
+
+        font-size: 26px;
+    }
+
+    .recommendation-info h2 {
+        font-size: 18px;
+    }
+
+    .recommendation-card .score {
+        grid-column: 1 / -1;
+
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        align-items: flex-start;
+
+        margin-top: 8px;
+    }
+
+    .recommendation-card .score-bar {
+        width: 100% !important;
+    }
+
+}
+
+/* ==========================================
+   HOME PAGE - FINAL DESIGN
+========================================== */
+
+/* NAVBAR */
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    padding: 22px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+    z-index: 10;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #a78bfa;
+}
+
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero {
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(124, 58, 237, 0.30),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(37, 99, 235, 0.22),
+            transparent 30%
+        ),
+        #080812;
+}
+
+.hero-content {
+    max-width: 850px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.hero .tag {
+    display: inline-block;
+
+    padding: 9px 17px;
+
+    border-radius: 50px;
+
+    background: rgba(124, 58, 237, 0.12);
+
+    border: 1px solid rgba(167, 139, 250, 0.35);
+
+    color: #bca8ff;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 7vw, 82px);
+
+    line-height: 1;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 28px;
+
+    color: white;
+}
+
+.hero h1 span {
+    background: linear-gradient(
+        90deg,
+        #a78bfa,
+        #60a5fa,
+        #c084fc
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero .description {
+    max-width: 650px;
+
+    margin: 0 auto 30px;
+
+    color: #a7a7bd;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   START BUTTON
+========================================== */
+
+.start-button {
+    display: inline-block;
+
+    padding: 15px 28px;
+
+    border-radius: 14px;
+
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #2563eb
+    );
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    box-shadow:
+        0 10px 30px rgba(99, 70, 255, 0.3);
+
+    transition: 0.3s ease;
+}
+
+.start-button:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 40px rgba(99, 70, 255, 0.45);
+}
+
+
+/* ==========================================
+   HOW IT WORKS
+========================================== */
+
+.features {
+    padding: 90px 25px;
+
+    display: block;
+
+    background: #080812;
+}
+
+.features h2 {
+    text-align: center;
+
+    font-size: 42px;
+
+    margin-bottom: 12px;
+
+    color: white;
+}
+
+.section-text {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    color: #9292a8;
+
+    font-size: 16px;
+}
+
+.feature-container {
+    max-width: 1100px;
+
+    margin: 55px auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.feature-card {
+    padding: 32px;
+
+    min-height: 220px;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+
+    border-radius: 24px;
+
+    transition: 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(139, 92, 246, 0.5);
+
+    background: rgba(139, 92, 246, 0.08);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.feature-card .number {
+    display: flex;
+
+    width: 45px;
+    height: 45px;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background: rgba(124, 58, 237, 0.15);
+
+    color: #a78bfa;
+
+    font-weight: 800;
+
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 21px;
+
+    margin-bottom: 10px;
+
+    color: white;
+}
+
+.feature-card p {
+    color: #9292a8;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   FINAL CALL TO ACTION
+========================================== */
+
+.assessment {
+    padding: 90px 25px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(124, 58, 237, 0.15),
+            transparent 50%
+        ),
+        #080812;
+}
+
+.assessment-box {
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 60px 30px;
+
+    text-align: center;
+
+    border-radius: 28px;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.assessment-box h2 {
+    font-size: 38px;
+
+    color: white;
+
+    margin-bottom: 15px;
+}
+
+.assessment-box p {
+    color: #9292a8;
+
+    font-size: 16px;
+
+    margin-bottom: 10px;
+}
+
+
+/* ==========================================
+   HOME PAGE MOBILE
+========================================== */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        padding: 18px 20px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .hero {
+        min-height: 600px;
+
+        padding: 70px 20px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+
+        letter-spacing: -2px;
+    }
+
+    .feature-container {
+        grid-template-columns: 1fr;
+    }
+
+    .assessment-box {
+        padding: 45px 22px;
+    }
+
+    .assessment-box h2 {
+        font-size: 30px;
+    }
+}
+
+/* ==========================================
+   FINAL ASSESSMENT PAGE DESIGN
+========================================== */
+
+.assessment-page {
+    min-height: calc(100vh - 80px);
+
+    padding: 70px 20px 90px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(124, 58, 237, 0.20),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(37, 99, 235, 0.15),
+            transparent 30%
+        ),
+        #080812;
+}
+
+
+.assessment {
+    width: 100%;
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    padding: 45px;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+
+    border-radius: 28px;
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.25);
+}
+
+
+/* HEADER */
+
+.assessment .hero-tag {
+    display: inline-block;
+
+    padding: 8px 16px;
+
+    border-radius: 50px;
+
+    background: rgba(124, 58, 237, 0.10);
+
+    border: 1px solid rgba(167, 139, 250, 0.35);
+
+    color: #bca8ff;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.8px;
+
+    margin-bottom: 20px;
+}
+
+
+.assessment h1 {
+    font-size: 50px;
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+
+    margin: 0 0 18px;
+
+    color: white;
+}
+
+
+.assessment h1 span {
+    background: linear-gradient(
+        90deg,
+        #a78bfa,
+        #60a5fa,
+        #c084fc
+    );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+.assessment > p {
+    max-width: 700px;
+
+    margin: 0 0 35px;
+
+    color: #9292a8;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* FORM */
+
+.assessment form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0;
+}
+
+
+/* LABELS */
+
+.assessment form label {
+    display: block;
+
+    margin: 20px 0 8px;
+
+    color: #dddded;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+/* INPUTS */
+
+.assessment form input,
+.assessment form select {
+    width: 100%;
+
+    min-height: 50px;
+
+    padding: 13px 16px;
+
+    border-radius: 13px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    color: white;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.assessment form input::placeholder {
+    color: #77778c;
+}
+
+
+.assessment form input:focus,
+.assessment form select:focus {
+    border-color: #8b5cf6;
+
+    background: rgba(139, 92, 246, 0.07);
+
+    box-shadow:
+        0 0 0 3px rgba(139, 92, 246, 0.12);
+}
+
+
+/* DROPDOWN */
+
+.assessment form option {
+    background: #151522;
+
+    color: white;
+}
+
+
+/* SUBMIT BUTTON */
+
+.assessment form button {
+    align-self: flex-start;
+
+    margin-top: 30px;
+
+    padding: 15px 28px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #2563eb
+    );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px rgba(99, 70, 255, 0.30);
+
+    transition: 0.3s ease;
+}
+
+
+.assessment form button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 40px rgba(99, 70, 255, 0.45);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .assessment-page {
+        padding: 40px 15px 60px;
+    }
+
+    .assessment {
+        padding: 30px 20px;
+
+        border-radius: 22px;
+    }
+
+    .assessment h1 {
+        font-size: 38px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .assessment > p {
+        font-size: 15px;
+    }
+
+    .assessment form button {
+        width: 100%;
+
+        align-self: stretch;
+    }
+
+}
+.assessment {
+    border: 5px solid red !important;
+}
+
+/* ==========================================
+   ASSESSMENT - NEW FINAL LOOK
+========================================== */
+
+.assessment-page {
+    min-height: 100vh !important;
+    padding: 80px 20px !important;
+
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(124, 58, 237, 0.30),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(37, 99, 235, 0.20),
+            transparent 30%
+        ),
+        #080812 !important;
+}
+
+
+/* MAIN ASSESSMENT CARD */
+
+.assessment-page .assessment {
+    width: min(850px, 100%) !important;
+
+    margin: 0 auto !important;
+
+    padding: 50px !important;
+
+    background: rgba(20, 20, 35, 0.90) !important;
+
+    border: 1px solid rgba(167, 139, 250, 0.25) !important;
+
+    border-radius: 30px !important;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.45) !important;
+
+    backdrop-filter: blur(20px);
+}
+
+
+/* TITLE */
+
+.assessment-page .assessment h1 {
+    color: #ffffff !important;
+
+    font-size: 52px !important;
+
+    line-height: 1.05 !important;
+
+    margin: 15px 0 20px !important;
+}
+
+
+.assessment-page .assessment h1 span {
+    background: linear-gradient(
+        90deg,
+        #a78bfa,
+        #60a5fa,
+        #c084fc
+    ) !important;
+
+    -webkit-background-clip: text !important;
+
+    -webkit-text-fill-color: transparent !important;
+}
+
+
+/* DESCRIPTION */
+
+.assessment-page .assessment > p {
+    color: #aaaac0 !important;
+
+    max-width: 700px !important;
+
+    margin-bottom: 35px !important;
+
+    line-height: 1.7 !important;
+}
+
+
+/* LABELS */
+
+.assessment-page form label {
+    color: #eeeeff !important;
+
+    font-size: 14px !important;
+
+    font-weight: 700 !important;
+
+    margin-top: 22px !important;
+
+    margin-bottom: 8px !important;
+}
+
+
+/* INPUTS + SELECTS */
+
+.assessment-page form input,
+.assessment-page form select {
+    width: 100% !important;
+
+    height: 52px !important;
+
+    padding: 0 16px !important;
+
+    background: #151523 !important;
+
+    border: 1px solid #303047 !important;
+
+    border-radius: 13px !important;
+
+    color: #ffffff !important;
+
+    font-size: 15px !important;
+
+    outline: none !important;
+}
+
+
+.assessment-page form input::placeholder {
+    color: #77778c !important;
+}
+
+
+.assessment-page form input:focus,
+.assessment-page form select:focus {
+    border-color: #8b5cf6 !important;
+
+    box-shadow:
+        0 0 0 3px rgba(139, 92, 246, 0.15) !important;
+}
+
+
+/* DROPDOWN OPTIONS */
+
+.assessment-page form option {
+    background: #151523 !important;
+
+    color: white !important;
+}
+
+
+/* BUTTON */
+
+.assessment-page form button {
+    margin-top: 35px !important;
+
+    padding: 16px 30px !important;
+
+    border-radius: 14px !important;
+
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #2563eb
+    ) !important;
+
+    color: white !important;
+
+    font-size: 16px !important;
+
+    font-weight: 800 !important;
+
+    border: none !important;
+
+    cursor: pointer !important;
+
+    box-shadow:
+        0 12px 35px rgba(124, 58, 237, 0.35) !important;
+
+    transition: all 0.25s ease !important;
+}
+
+
+.assessment-page form button:hover {
+    transform: translateY(-3px) !important;
+
+    box-shadow:
+        0 18px 45px rgba(124, 58, 237, 0.50) !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .assessment-page {
+        padding: 40px 15px !important;
+    }
+
+    .assessment-page .assessment {
+        padding: 30px 20px !important;
+    }
+
+    .assessment-page .assessment h1 {
+        font-size: 38px !important;
+    }
+
+    .assessment-page form button {
+        width: 100% !important;
+    }
+
+}
+
+.assessment {
+    border: 5px solid red !important;
+}
