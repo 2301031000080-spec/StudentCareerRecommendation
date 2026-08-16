@@ -2767,3 +2767,388 @@ footer {
 .assessment {
     border: 5px solid red !important;
 }
+/* ==========================================
+   FINAL PINK + PURPLE THEME OVERRIDE
+   ========================================== */
+
+body {
+    background: #0d0614;
+    color: #fff7ff;
+}
+
+/* NAVIGATION */
+
+.navbar,
+header {
+    background: rgba(13, 6, 20, 0.92);
+    border-bottom: 1px solid rgba(236, 72, 153, 0.25);
+}
+
+.logo {
+    background: linear-gradient(90deg, #c084fc, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links a,
+nav a {
+    color: #fff;
+}
+
+.nav-links a:hover,
+nav a:hover {
+    color: #f472b6;
+}
+
+
+/* HOME PAGE */
+
+.hero {
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(124, 58, 237, 0.30),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(236, 72, 153, 0.25),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(168, 85, 247, 0.18),
+            transparent 35%
+        ),
+        #0d0614;
+}
+
+.hero::before {
+    background: #7c3aed;
+}
+
+.hero::after {
+    background: #ec4899;
+}
+
+.hero h1 span {
+    background: linear-gradient(
+        90deg,
+        #c084fc,
+        #ec4899,
+        #a855f7
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tag {
+    border-color: rgba(236, 72, 153, 0.4);
+    background: rgba(236, 72, 153, 0.10);
+    color: #f0abfc;
+}
+
+
+/* ALL MAIN BUTTONS */
+
+button,
+.btn,
+.hero a,
+a.button,
+.start-button {
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #ec4899
+    ) !important;
+
+    box-shadow:
+        0 10px 30px rgba(236, 72, 153, 0.25);
+}
+
+button:hover,
+.btn:hover,
+.hero a:hover,
+a.button:hover,
+.start-button:hover {
+    box-shadow:
+        0 15px 40px rgba(236, 72, 153, 0.40);
+}
+
+
+/* HOME FEATURE CARDS */
+
+.feature-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(124, 58, 237, 0.12),
+            rgba(236, 72, 153, 0.08)
+        );
+
+    border-color: rgba(236, 72, 153, 0.20);
+}
+
+.feature-card:hover {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(124, 58, 237, 0.20),
+            rgba(236, 72, 153, 0.14)
+        );
+
+    border-color: rgba(236, 72, 153, 0.50);
+}
+
+.number {
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #ec4899
+    );
+}
+
+
+/* HOME FINAL CTA */
+
+.assessment-box {
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(124, 58, 237, 0.22),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(236, 72, 153, 0.20),
+            transparent 35%
+        ),
+        rgba(255, 255, 255, 0.045);
+
+    border-color: rgba(236, 72, 153, 0.30);
+}
+
+
+/* ASSESSMENT PAGE */
+
+.assessment-page {
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(124, 58, 237, 0.28),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(236, 72, 153, 0.22),
+            transparent 30%
+        ),
+        #0d0614;
+}
+
+.assessment {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(124, 58, 237, 0.12),
+            rgba(236, 72, 153, 0.07)
+        );
+
+    border-color: rgba(236, 72, 153, 0.25);
+}
+
+.assessment h1 span {
+    background: linear-gradient(
+        90deg,
+        #c084fc,
+        #ec4899,
+        #a855f7
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+input,
+select,
+textarea {
+    background: rgba(13, 6, 20, 0.80);
+    border-color: rgba(236, 72, 153, 0.22);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #ec4899;
+    box-shadow:
+        0 0 0 3px rgba(236, 72, 153, 0.14);
+}
+
+option {
+    background: #1a0c24;
+}
+
+
+/* RESULT PAGE */
+
+.result-page {
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(124, 58, 237, 0.28),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(236, 72, 153, 0.24),
+            transparent 30%
+        ),
+        #0d0614;
+}
+
+.result-card {
+    background:
+        linear-gradient(
+            145deg,
+            #fff7ff,
+            #f5e9ff
+        );
+
+    border-color: rgba(236, 72, 153, 0.25);
+
+    box-shadow:
+        0 25px 80px rgba(124, 58, 237, 0.22);
+}
+
+.result-tag {
+    background:
+        linear-gradient(
+            90deg,
+            #f3e8ff,
+            #fce7f3
+        );
+
+    color: #7c2d8f;
+}
+
+.result-card h1 span {
+    background: linear-gradient(
+        90deg,
+        #7c3aed,
+        #ec4899
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* RECOMMENDATION CARDS */
+
+.recommendation-card {
+    border-color: #eadcf0;
+    background: #fff9ff;
+}
+
+.recommendation-card.top-career {
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #a855f7,
+            #ec4899
+        );
+}
+
+
+/* SCORE */
+
+.score strong {
+    color: #7c3aed;
+}
+
+.score-fill {
+    background:
+        linear-gradient(
+            90deg,
+            #7c3aed,
+            #ec4899
+        );
+}
+
+
+/* CAREER DETAILS */
+
+.career-details {
+    background:
+        linear-gradient(
+            145deg,
+            #fff7ff,
+            #f7edff
+        );
+
+    border-color: #ead8f1;
+}
+
+.details-icon {
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #ec4899
+        );
+}
+
+.skill-tags span {
+    background:
+        linear-gradient(
+            90deg,
+            #f3e8ff,
+            #fce7f3
+        );
+
+    border-color: #e9cfee;
+    color: #713b78;
+}
+
+.learning-path span {
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #ec4899
+        );
+}
+
+
+/* RESULT BUTTONS */
+
+.result-buttons .again-button {
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #ec4899
+        ) !important;
+}
+
+.result-buttons .home-button {
+    color: #713b78;
+    background: #f5e9fa !important;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #09040f;
+    color: #bda9c5;
+    border-top-color: rgba(236, 72, 153, 0.20);
+}
+
+
+/* REMOVE OLD BLUE COLORS */
+
+.assessment-page {
+    background-color: #0d0614;
+}
