@@ -3427,3 +3427,123 @@ footer {
     border-top-color:
         rgba(236, 72, 153, 0.20) !important;
 }
+
+/* ==========================================
+   ASSESSMENT PAGE - PINK + PURPLE
+   ========================================== */
+
+.assessment-page {
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(124, 58, 237, 0.45),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 25%,
+            rgba(236, 72, 153, 0.40),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(168, 85, 247, 0.25),
+            transparent 40%
+        ),
+        #0d0614 !important;
+}
+
+.assessment {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(124, 58, 237, 0.20),
+            rgba(236, 72, 153, 0.12)
+        ) !important;
+
+    border: 1px solid rgba(236, 72, 153, 0.35) !important;
+
+    box-shadow:
+        0 25px 80px rgba(124, 58, 237, 0.20),
+        0 10px 40px rgba(236, 72, 153, 0.12);
+}
+
+.hero-tag {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(124, 58, 237, 0.20),
+            rgba(236, 72, 153, 0.18)
+        ) !important;
+
+    border-color:
+        rgba(236, 72, 153, 0.45) !important;
+
+    color: #f0abfc !important;
+}
+
+.assessment h1 span {
+    background:
+        linear-gradient(
+            90deg,
+            #a855f7,
+            #ec4899,
+            #c084fc
+        ) !important;
+
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.assessment > p {
+    color: #d8c4df !important;
+}
+
+.assessment form label {
+    color: #f3d9f0 !important;
+}
+
+.assessment input,
+.assessment select {
+    background: rgba(20, 8, 30, 0.90) !important;
+
+    border: 1px solid
+        rgba(192, 132, 252, 0.30) !important;
+
+    color: #fff7ff !important;
+}
+
+.assessment input::placeholder {
+    color: #b9a4c2 !important;
+}
+
+.assessment input:focus,
+.assessment select:focus {
+    border-color: #ec4899 !important;
+
+    box-shadow:
+        0 0 0 3px rgba(236, 72, 153, 0.15),
+        0 0 25px rgba(124, 58, 237, 0.15) !important;
+}
+
+.assessment option {
+    background: #180b24 !important;
+    color: #fff !important;
+}
+
+.assessment button {
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #a855f7,
+            #ec4899
+        ) !important;
+
+    box-shadow:
+        0 12px 35px rgba(236, 72, 153, 0.30) !important;
+}
+
+.assessment button:hover {
+    box-shadow:
+        0 15px 45px rgba(236, 72, 153, 0.50) !important;
+}
