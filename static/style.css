@@ -73,7 +73,7 @@ nav strong {
 
     background:
         radial-gradient(circle at 20% 20%, rgba(112, 68, 255, 0.28), transparent 30%),
-        radial-gradient(circle at 80% 30%, rgba(0, 174, 255, 0.20), transparent 30%),
+        radial-gradient(circle at 80% 30%, rgba(236, 72, 153, 0.20), transparent 30%),
         radial-gradient(circle at 50% 90%, rgba(191, 0, 255, 0.15), transparent 35%),
         #080812;
 }
@@ -96,7 +96,7 @@ nav strong {
     position: absolute;
     width: 450px;
     height: 450px;
-    background: #00c8ff;
+    background: #ec4899;
     filter: blur(180px);
     opacity: 0.12;
     border-radius: 50%;
@@ -134,10 +134,10 @@ nav strong {
 
 .hero h1 span {
     background: linear-gradient(
-        90deg,
-        #a78bfa,
-        #60a5fa,
-        #c084fc
+       90deg,
+        #c084fc,
+        #ec4899,
+        #a855f7 
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -170,7 +170,7 @@ a.button {
     background: linear-gradient(
         135deg,
         #7c3aed,
-        #2563eb
+      #ec4899
     );
 
     box-shadow:
@@ -523,8 +523,8 @@ footer {
     border-radius: 22px;
     background: linear-gradient(
         135deg,
-        #f5f0ff,
-        #eee7ff
+        #7c3aed,
+        #ec4899
     );
     margin-bottom: 25px;
 }
@@ -591,7 +591,11 @@ footer {
     width: 90%;
     height: 100%;
     border-radius: 20px;
-    background: #7c3aed;
+    background: linear-gradient(
+        90deg,
+        #7c3aed,
+        #ec4899
+    );
 }
 
 
@@ -684,7 +688,11 @@ footer {
 
 
 .again-button {
-    background: #7c3aed;
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #ec4899
+    )
     color: white;
 }
 
@@ -1191,7 +1199,7 @@ footer {
     background: linear-gradient(
         135deg,
         #7c3aed,
-        #a855f7
+       #ec4899
     );
 
     color: white;
@@ -1572,7 +1580,11 @@ footer {
 
     border-radius: 20px;
 
-    background: #7c3aed;
+  background: linear-gradient(
+        90deg,
+        #7c3aed,
+        #ec4899
+    );   
 
     transition: width 0.8s ease;
 }
