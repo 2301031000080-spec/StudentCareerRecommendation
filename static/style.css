@@ -3152,3 +3152,278 @@ footer {
 .assessment-page {
     background-color: #0d0614;
 }
+
+
+/* ==========================================
+   CAREERGUIDE AI - PINK + PURPLE THEME
+   ========================================== */
+
+body {
+    background: #0d0614 !important;
+    color: #fff7ff;
+}
+
+/* NAVBAR */
+
+.navbar,
+header {
+    background: #0d0614 !important;
+    border-bottom: 1px solid rgba(236, 72, 153, 0.25);
+}
+
+.logo {
+    background: linear-gradient(90deg, #c084fc, #ec4899) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.nav-links a,
+nav a {
+    color: #fce7f3 !important;
+}
+
+.nav-links a:hover,
+nav a:hover {
+    color: #f472b6 !important;
+}
+
+
+/* HERO */
+
+.hero,
+.assessment-page,
+.result-page {
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(124, 58, 237, 0.35),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 85% 30%,
+            rgba(236, 72, 153, 0.30),
+            transparent 32%
+        ),
+        #0d0614 !important;
+}
+
+.hero h1 span,
+.assessment h1 span {
+    background: linear-gradient(
+        90deg,
+        #c084fc,
+        #ec4899,
+        #a855f7
+    ) !important;
+
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+
+/* BUTTONS */
+
+.start-button,
+button,
+.again-button {
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #ec4899
+    ) !important;
+
+    border: none !important;
+    color: white !important;
+
+    box-shadow:
+        0 10px 30px rgba(236, 72, 153, 0.25);
+}
+
+.start-button:hover,
+button:hover,
+.again-button:hover {
+    box-shadow:
+        0 15px 40px rgba(236, 72, 153, 0.45);
+}
+
+
+/* FEATURE CARDS */
+
+.feature-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(124, 58, 237, 0.16),
+            rgba(236, 72, 153, 0.10)
+        ) !important;
+
+    border-color:
+        rgba(236, 72, 153, 0.25) !important;
+}
+
+.feature-card:hover {
+    border-color:
+        rgba(236, 72, 153, 0.60) !important;
+
+    box-shadow:
+        0 15px 40px rgba(124, 58, 237, 0.20);
+}
+
+.number {
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #ec4899
+    ) !important;
+}
+
+
+/* ASSESSMENT FORM */
+
+.assessment {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(124, 58, 237, 0.15),
+            rgba(236, 72, 153, 0.08)
+        ) !important;
+
+    border-color:
+        rgba(236, 72, 153, 0.30) !important;
+}
+
+input,
+select,
+textarea {
+    background: #160b20 !important;
+    color: #fff7ff !important;
+    border-color:
+        rgba(236, 72, 153, 0.25) !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #ec4899 !important;
+
+    box-shadow:
+        0 0 0 3px rgba(236, 72, 153, 0.15) !important;
+}
+
+option {
+    background: #160b20 !important;
+    color: white !important;
+}
+
+
+/* RESULT PAGE */
+
+.result-card {
+    border-color:
+        rgba(236, 72, 153, 0.30) !important;
+
+    box-shadow:
+        0 25px 80px rgba(124, 58, 237, 0.25) !important;
+}
+
+.recommendation-card {
+    border-color:
+        rgba(236, 72, 153, 0.25) !important;
+}
+
+.recommendation-card.top-career {
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #a855f7,
+        #ec4899
+    ) !important;
+
+    color: white !important;
+}
+
+
+/* SCORE BARS */
+
+.score-fill {
+    background: linear-gradient(
+        90deg,
+        #7c3aed,
+        #ec4899
+    ) !important;
+}
+
+.progress {
+    background: linear-gradient(
+        90deg,
+        #7c3aed,
+        #ec4899
+    ) !important;
+}
+
+
+/* CAREER DETAILS */
+
+.career-details {
+    border-color:
+        rgba(236, 72, 153, 0.25) !important;
+}
+
+.details-icon {
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #ec4899
+    ) !important;
+}
+
+.skill-tags span {
+    background:
+        linear-gradient(
+            90deg,
+            #f3e8ff,
+            #fce7f3
+        ) !important;
+
+    border-color: #e9cfee !important;
+    color: #713b78 !important;
+}
+
+.learning-path span {
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #ec4899
+    ) !important;
+}
+
+
+/* CTA SECTION */
+
+.assessment-box {
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(124, 58, 237, 0.25),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(236, 72, 153, 0.22),
+            transparent 35%
+        ),
+        rgba(255, 255, 255, 0.04) !important;
+
+    border-color:
+        rgba(236, 72, 153, 0.30) !important;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #09040f !important;
+    color: #d8bfd8 !important;
+    border-top-color:
+        rgba(236, 72, 153, 0.20) !important;
+}
