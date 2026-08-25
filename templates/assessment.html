@@ -110,11 +110,6 @@
             <label for="goal">What is your main career goal?</label>
             <select id="goal" name="goal" required>
                 <option value="">Select your goal</option>
-                <option value="High salary">High-paying career</option>
-                <option value="Creative work">Creative work</option>
-                <option value="Technical career">Technical career</option>
-                <option value="Research">Research & innovation</option>
-                <option value="Stable career">Stable career</option>
             </select>
 
             <button type="submit">Analyze My Profile ✨</button>
@@ -125,5 +120,105 @@
 <footer>
     <p>CareerGuide AI • Student Career Recommendation System</p>
 </footer>
+
+<script>
+    // Career goals are tailored to the selected professional field.
+    // The option values remain compatible with the ML dataset while the
+    // visible text is specific to the student's chosen field.
+    const goalOptions = {
+        "Artificial Intelligence": [
+            ["Technical career", "AI & Technology"],
+            ["High salary", "High-paying AI career"],
+            ["Research", "AI Research & Innovation"]
+        ],
+        "Machine Learning": [
+            ["Technical career", "Machine Learning & Technology"],
+            ["High salary", "High-paying ML career"],
+            ["Research", "ML Research & Innovation"]
+        ],
+        "Data Science": [
+            ["Technical career", "Data & Analytics"],
+            ["High salary", "High-paying data career"],
+            ["Research", "Data Research & Innovation"]
+        ],
+        "Web Development": [
+            ["Technical career", "Web & Software Development"],
+            ["Creative work", "Creative Web Development"],
+            ["High salary", "High-paying development career"]
+        ],
+        "Cyber Security": [
+            ["Technical career", "Cybersecurity & Protection"],
+            ["High salary", "High-paying cybersecurity career"],
+            ["Research", "Security Research & Innovation"]
+        ],
+        "App Development": [
+            ["Technical career", "Mobile App Development"],
+            ["Creative work", "Creative App Development"],
+            ["High salary", "High-paying app development career"]
+        ],
+        "Commerce & Finance": [
+            ["High salary", "Finance & Investment"],
+            ["Stable career", "Banking & Accounting"],
+            ["Technical career", "Business & Financial Analysis"],
+            ["Creative work", "Marketing & Business"],
+            ["High salary", "Corporate & Business Career"]
+        ],
+        "Medical & Healthcare": [
+            ["Stable career", "Healthcare & Patient Care"],
+            ["Stable career", "Medical Profession"],
+            ["Research", "Medical Research & Science"],
+            ["High salary", "Specialized Healthcare Career"]
+        ],
+        "Law & Public Services": [
+            ["Stable career", "Law & Legal Practice"],
+            ["Stable career", "Government & Public Service"],
+            ["Research", "Public Policy & Research"],
+            ["High salary", "Legal & Professional Career"]
+        ],
+        "Management & Business": [
+            ["High salary", "Business Management"],
+            ["Creative work", "Marketing & Sales"],
+            ["Stable career", "Human Resources & Administration"],
+            ["Technical career", "Operations & Project Management"],
+            ["High salary", "Entrepreneurship & Business"]
+        ],
+        "Science & Research": [
+            ["Research", "Scientific Research & Innovation"],
+            ["Stable career", "Science & Laboratory Career"],
+            ["Technical career", "Applied Science & Technology"]
+        ],
+        "Engineering & Technology": [
+            ["Technical career", "Engineering & Technology"],
+            ["High salary", "High-paying Engineering Career"],
+            ["Research", "Engineering Research & Innovation"],
+            ["Stable career", "Core Engineering Career"]
+        ],
+        "Education": [
+            ["Stable career", "Teaching & Education"],
+            ["Research", "Academic Research"],
+            ["Creative work", "Educational Development"],
+            ["High salary", "Professional Education Career"]
+        ]
+    };
+
+    const interestSelect = document.getElementById("interest");
+    const goalSelect = document.getElementById("goal");
+
+    function updateCareerGoals() {
+        const interest = interestSelect.value;
+        const options = goalOptions[interest] || [];
+
+        goalSelect.innerHTML = '<option value="">Select your goal</option>';
+
+        options.forEach(([value, label]) => {
+            const option = document.createElement("option");
+            option.value = value;
+            option.textContent = label;
+            goalSelect.appendChild(option);
+        });
+    }
+
+    interestSelect.addEventListener("change", updateCareerGoals);
+</script>
 </body>
 </html>
