@@ -1,0 +1,133 @@
+/* ==========================================
+   CAREER RESOURCES - PINK + PURPLE THEME
+   ========================================== */
+
+.result-card {
+    background:
+        radial-gradient(circle at 10% 0%, rgba(124, 58, 237, 0.16), transparent 30%),
+        radial-gradient(circle at 95% 15%, rgba(236, 72, 153, 0.14), transparent 30%),
+        #13091d !important;
+    color: #fdf4ff !important;
+    border: 1px solid rgba(236, 72, 153, 0.22) !important;
+}
+
+.result-card .result-tag {
+    background: rgba(168, 85, 247, 0.16) !important;
+    color: #e9b8ff !important;
+    border: 1px solid rgba(192, 132, 252, 0.28);
+}
+
+.result-card h1 span {
+    background: linear-gradient(90deg, #c084fc, #ec4899, #a855f7) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.result-card .result-description,
+.result-card .ai-insight p,
+.result-card .career-details p {
+    color: #d9c7df !important;
+}
+
+.result-card .recommendation-card,
+.result-card .ai-insight,
+.result-card .career-details {
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.10), rgba(236, 72, 153, 0.07)) !important;
+    border: 1px solid rgba(192, 132, 252, 0.22) !important;
+    color: #fff7ff !important;
+}
+
+.result-card .recommendation-card:hover,
+.result-card .career-details:hover {
+    border-color: rgba(236, 72, 153, 0.50) !important;
+    box-shadow: 0 16px 45px rgba(124, 58, 237, 0.16) !important;
+}
+
+.result-card .recommendation-info h2,
+.result-card .career-details h2,
+.result-card .career-details h3,
+.result-card .ai-insight h3 {
+    color: #fff7ff !important;
+}
+
+.result-card .recommendation-label,
+.result-card .section-label {
+    color: #e0a9ff !important;
+}
+
+.result-card .score strong {
+    color: #f472b6 !important;
+}
+
+.result-card .score-bar {
+    background: rgba(255, 255, 255, 0.10) !important;
+}
+
+.result-card .score-fill {
+    background: linear-gradient(90deg, #7c3aed, #a855f7, #ec4899) !important;
+}
+
+.result-card .insight-icon,
+.result-card .details-icon {
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.22), rgba(236, 72, 153, 0.18)) !important;
+    border-color: rgba(236, 72, 153, 0.28) !important;
+}
+
+/* Course and YouTube resource cards */
+.result-card .resource-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 12px 0 28px;
+}
+
+.result-card .resource-link {
+    display: block;
+    padding: 15px 17px;
+    border-radius: 14px;
+    text-decoration: none;
+    color: #f7d9ff !important;
+    background: rgba(124, 58, 237, 0.12) !important;
+    border: 1px solid rgba(192, 132, 252, 0.24) !important;
+    transition: 0.25s ease;
+}
+
+.result-card .resource-link:hover {
+    transform: translateY(-3px);
+    color: #ffffff !important;
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.30), rgba(236, 72, 153, 0.24)) !important;
+    border-color: rgba(236, 72, 153, 0.55) !important;
+    box-shadow: 0 10px 30px rgba(236, 72, 153, 0.12);
+}
+
+.result-card .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 12px 0 25px;
+}
+
+.result-card .skill-tags span {
+    padding: 8px 13px;
+    border-radius: 999px;
+    background: rgba(236, 72, 153, 0.12) !important;
+    border: 1px solid rgba(236, 72, 153, 0.25) !important;
+    color: #f3c4e8 !important;
+    font-size: 14px;
+}
+
+.result-card .result-buttons a {
+    background: linear-gradient(135deg, #7c3aed, #ec4899) !important;
+    color: white !important;
+    border: none !important;
+}
+
+.result-card .disclaimer {
+    color: #a995ad !important;
+}
+
+@media (max-width: 700px) {
+    .result-card .resource-list {
+        grid-template-columns: 1fr;
+    }
+}
