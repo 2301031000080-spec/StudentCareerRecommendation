@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Compare Assessments</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"><link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}"></head>
+<body>
+<header><nav><div class="logo">CareerGuide</div><div><a href="/">Home</a> <a href="/history">History</a> <a href="/profile">Profile</a></div></nav></header>
+<section class="dashboard-page"><div class="dashboard-shell">
+<div class="dashboard-hero"><div class="eyebrow">Retake & Compare</div><h1>See how your <span>results changed.</span></h1><p>Select two assessments to compare career matches and score changes.</p></div>
+<form class="panel" method="GET" action="/compare"><div class="form-grid">
+<div class="form-group"><label>Earlier assessment</label><select name="first" required><option value="">Select</option>{% for row in assessments %}<option value="{{ row['id'] }}" {% if comparison and comparison.first['id']==row['id'] %}selected{% endif %}>{{ row['created_at'] }} - #{{ row['id'] }}</option>{% endfor %}</select></div>
+<div class="form-group"><label>Later assessment</label><select name="second" required><option value="">Select</option>{% for row in assessments %}<option value="{{ row['id'] }}" {% if comparison and comparison.second['id']==row['id'] %}selected{% endif %}>{{ row['created_at'] }} - #{{ row['id'] }}</option>{% endfor %}</select></div>
+</div><div class="actions"><button class="primary-btn" type="submit">Compare Results</button></div></form>
+{% if comparison %}<div class="panel-grid" style="margin-top:20px">
+<div class="compare-card"><h2>Earlier</h2><p class="muted">{{ comparison.first['created_at'] }}</p>{% for r in comparison.first_recs %}<div>{{ r.career }} - <strong>{{ r.score }}%</strong></div>{% endfor %}</div>
+<div class="compare-card"><h2>Later</h2><p class="muted">{{ comparison.second['created_at'] }}</p>{% for r in comparison.second_recs %}<div>{{ r.career }} - <strong>{{ r.score }}%</strong></div>{% endfor %}</div>
+</div>
+<div class="panel" style="margin-top:20px"><h2>Score Changes</h2><table class="compare-table"><thead><tr><th>Career</th><th>Earlier</th><th>Later</th><th>Change</th></tr></thead><tbody>{% for item in comparison.careers %}<tr><td>{{ item.career }}</td><td>{{ item.first_score }}%</td><td>{{ item.second_score }}%</td><td class="{% if item.change > 0 %}change-up{% elif item.change < 0 %}change-down{% else %}change-same{% endif %}">{% if item.change > 0 %}+{% endif %}{{ item.change }}%</td></tr>{% endfor %}</tbody></table></div>{% endif %}
+</div></section><footer><p>Student Career Recommendation System</p></footer></body></html>
