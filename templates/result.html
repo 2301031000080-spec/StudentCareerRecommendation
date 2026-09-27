@@ -1,154 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Career Match | CareerGuide AI</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='resources.css') }}">
-</head>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Career Match | Student Career Recommendation System</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"><link rel="stylesheet" href="{{ url_for('static', filename='resources.css') }}"><link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}"></head>
 <body>
+<header><nav><div class="logo">CareerGuide</div><div><a href="/">Home</a><a href="/profile">Profile</a><a href="/history">History</a><a href="/favorites">Saved Careers</a><a href="/resume">CV Builder</a></div></nav></header>
+<section class="result-page"><div class="result-card">
+<div class="result-tag">✨ ANALYSIS COMPLETE</div><p class="hello">Hey {{ name }} 👋</p>
+<h1>Your career<br><span>matches are here.</span></h1>
+<p class="result-description">Your assessment was analyzed using the recommendation model and restricted to careers from your selected professional field.</p>
 
-<header>
-    <nav>
-        <div class="logo">CareerGuide AI</div>
-        <div><a href="/">Home</a></div>
-    </nav>
-</header>
+<div class="recommendations">
+{% for recommendation in recommendations %}<div class="recommendation-card {% if loop.first %}top-career{% endif %}">
+<div class="rank">{% if loop.index == 1 %}🥇{% elif loop.index == 2 %}🥈{% else %}🥉{% endif %}</div>
+<div class="recommendation-info"><p class="recommendation-label">{% if loop.first %}TOP RECOMMENDATION{% else %}RECOMMENDED CAREER{% endif %}</p><h2>{{ recommendation.career }}</h2></div>
+<div class="score"><strong>{{ recommendation.score }}%</strong><span>Match</span><div class="score-bar"><div class="score-fill" style="width: {{ recommendation.score }}%;"></div></div></div>
+</div>{% endfor %}
+</div>
 
-<section class="result-page">
-    <div class="result-card">
+<div class="ai-insight"><div class="insight-icon">🎯</div><div><h3>Profile Summary</h3><p>You selected <strong>{{ interest }}</strong>, with a goal of <strong>{{ career_goal|lower }}</strong>. Academic performance: <strong>{{ academic_performance }}</strong>; programming: <strong>{{ programming }}</strong>; problem-solving: <strong>{{ problem_solving }}</strong>; communication: <strong>{{ communication }}</strong>.</p></div></div>
 
-        <div class="result-tag">✨ AI ANALYSIS COMPLETE</div>
+<div class="career-details"><div class="details-header"><span class="details-icon">📚</span><div><p class="section-label">CAREER-SPECIFIC RESOURCES</p><h2>How to learn {{ recommendations[0].career }}</h2></div></div>
+<p>Resources below are selected for the professional domain of your recommended career.</p>
+<h3>🎓 Recommended Courses</h3><div class="resource-list">{% for course in learning_resources.courses %}<a href="{{ course.url }}" target="_blank" rel="noopener noreferrer" class="resource-link">{{ course.name }} ↗</a>{% endfor %}</div>
+<h3>▶️ Practical Learning</h3><div class="resource-list">{% for video in learning_resources.videos %}<a href="{{ video.url }}" target="_blank" rel="noopener noreferrer" class="resource-link">{{ video.name }} ↗</a>{% endfor %}</div>
+<h3>🛠️ Skills to Develop</h3><div class="skill-tags">{% for skill in learning_resources.skills %}<span>{{ skill }}</span>{% endfor %}</div>
+<h3>💡 Suggested Practice</h3><p>{{ learning_resources.project }}</p>
+</div>
 
-        <p class="hello">Hey {{ name }} 👋</p>
+<div class="career-details"><div class="details-header"><span class="details-icon">💜</span><div><p class="section-label">CAREER ACTIONS</p><h2>Keep building your path</h2></div></div>
+<p>Save the career for later, explore its full resource page, retake the assessment when your skills change, or add your achievements to your CV.</p>
+<div class="actions"><form method="POST" action="/favorite/{{ recommendations[0].career }}"><button class="primary-btn" type="submit">{% if favorite %}Saved - click to unsave{% else %}Save Career{% endif %}</button></form><a class="ghost-btn" href="/career/{{ recommendations[0].career }}">Explore Career</a></div></div>
 
-        <h1>Your career<br><span>matches are here.</span></h1>
-
-        <p class="result-description">
-            Our AI-based recommendation system analyzed your interests, skills,
-            academic performance and career goals to find your strongest career matches.
-        </p>
-
-        <!-- TOP 3 CAREERS -->
-        <div class="recommendations">
-            {% for recommendation in recommendations %}
-            <div class="recommendation-card {% if loop.first %}top-career{% endif %}">
-                <div class="rank">
-                    {% if loop.index == 1 %}🥇{% elif loop.index == 2 %}🥈{% else %}🥉{% endif %}
-                </div>
-
-                <div class="recommendation-info">
-                    <p class="recommendation-label">
-                        {% if loop.first %}TOP RECOMMENDATION{% else %}RECOMMENDED CAREER{% endif %}
-                    </p>
-                    <h2>{{ recommendation.career }}</h2>
-                </div>
-
-                <div class="score">
-                    <strong>{{ recommendation.score }}%</strong>
-                    <span>Match</span>
-                    <div class="score-bar">
-                        <div class="score-fill" style="width: {{ recommendation.score }}%;"></div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-
-        <!-- PERSONALIZED PROFILE -->
-        <div class="ai-insight">
-            <div class="insight-icon">🤖</div>
-            <div>
-                <h3>Your AI Profile Analysis</h3>
-                <p>
-                    You are interested in <strong>{{ interest }}</strong> and are looking for a
-                    <strong>{{ career_goal|lower }}</strong> career. Your academic performance is
-                    <strong>{{ academic_performance }}</strong>, programming is
-                    <strong>{{ programming }}</strong>, problem-solving is
-                    <strong>{{ problem_solving }}</strong>, and communication is
-                    <strong>{{ communication }}</strong>.
-                </p>
-            </div>
-        </div>
-
-        <!-- LEARNING RESOURCES -->
-        <div class="career-details">
-            <div class="details-header">
-                <span class="details-icon">📚</span>
-                <div>
-                    <p class="section-label">WEEK 3 • LEARNING RESOURCES</p>
-                    <h2>How to learn {{ recommendations[0].career }}</h2>
-                </div>
-            </div>
-
-            <p>
-                Start with structured courses, then use practical videos and projects to
-                understand how the skills are applied in real-world situations.
-            </p>
-
-            <h3>🎓 Recommended Courses</h3>
-            <div class="resource-list">
-                {% for course in learning_resources.courses %}
-                <a href="{{ course.url }}" target="_blank" rel="noopener noreferrer" class="resource-link">
-                    {{ course.name }} ↗
-                </a>
-                {% endfor %}
-            </div>
-
-            <h3>▶️ Practical YouTube Learning</h3>
-            <div class="resource-list">
-                {% for video in learning_resources.videos %}
-                <a href="{{ video.url }}" target="_blank" rel="noopener noreferrer" class="resource-link">
-                    {{ video.name }} ↗
-                </a>
-                {% endfor %}
-            </div>
-
-            <h3>🛠️ Skills to Develop</h3>
-            <div class="skill-tags">
-                {% for skill in learning_resources.skills %}
-                <span>{{ skill }}</span>
-                {% endfor %}
-            </div>
-
-            <h3>💡 Suggested Real-World Practice</h3>
-            <p>{{ learning_resources.project }}</p>
-        </div>
-
-        <!-- CAREER GUIDANCE -->
-        <div class="career-details">
-            <div class="details-header">
-                <span class="details-icon">🎯</span>
-                <div>
-                    <p class="section-label">CAREER GUIDANCE</p>
-                    <h2>Build toward {{ recommendations[0].career }}</h2>
-                </div>
-            </div>
-
-            <p>
-                Your strongest match is <strong>{{ recommendations[0].career }}</strong>.
-                Use the recommended resources to learn the fundamentals, practice with
-                real datasets or projects, build a portfolio, and gradually move toward
-                professional-level work in this field.
-            </p>
-        </div>
-
-        <div class="result-buttons">
-            <a href="/assessment" class="again-button">🔄 Try Again</a>
-            <a href="/" class="home-button">🏠 Back Home</a>
-        </div>
-
-        <p class="disclaimer">
-            CareerGuide AI provides recommendations for educational and career exploration purposes.
-        </p>
-
-    </div>
-</section>
-
-<footer>
-    <p>CareerGuide AI • Student Career Recommendation System</p>
-</footer>
-
-</body>
-</html>
+<div class="result-buttons"><a href="/assessment" class="again-button">🔄 Retake Assessment</a><a href="/history" class="home-button">📊 Assessment History</a></div>
+<p class="disclaimer">Recommendations are for educational and career exploration purposes.</p>
+</div></section>
+<footer><p>Student Career Recommendation System</p></footer>
+</body></html>
