@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CV Builder</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"><link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}"></head>
+<body>
+<header><nav><div class="logo">CareerGuide</div><div><a href="/">Home</a> <a href="/profile">Profile</a> <a href="/history">History</a></div></nav></header>
+<section class="dashboard-page"><div class="dashboard-shell">
+<div class="dashboard-hero"><div class="eyebrow">CV / Resume Builder</div><h1>Build your <span>professional CV.</span></h1><p>Save your details, preview the CV and use your browser's Print / Save as PDF option.</p></div>
+<form method="POST" class="cv-form"><div class="form-grid">
+<div class="form-group"><label>Full Name</label><input value="{{ student['name'] }}" disabled></div>
+<div class="form-group"><label>Phone</label><input name="phone" value="{{ cv['phone'] if cv else '' }}" placeholder="+91..."></div>
+<div class="form-group"><label>Email</label><input name="email" value="{{ cv['email'] if cv else '' }}" placeholder="you@example.com"></div>
+<div class="form-group"><label>Location</label><input name="location" value="{{ cv['location'] if cv else '' }}" placeholder="City, State"></div>
+<div class="form-group full"><label>Professional Summary</label><textarea name="summary" placeholder="Short professional summary">{{ cv['summary'] if cv else '' }}</textarea></div>
+<div class="form-group full"><label>Education</label><textarea name="education" placeholder="Degree, college, year, academic highlights">{{ cv['education'] if cv else '' }}</textarea></div>
+<div class="form-group full"><label>Skills</label><textarea name="skills" placeholder="Python, SQL, Communication...">{{ cv['skills'] if cv else '' }}</textarea></div>
+<div class="form-group full"><label>Projects</label><textarea name="projects" placeholder="Project name - what you built and what you learned">{{ cv['projects'] if cv else '' }}</textarea></div>
+<div class="form-group full"><label>Certifications</label><textarea name="certifications" placeholder="Certification name, issuer, year">{{ cv['certifications'] if cv else '' }}</textarea></div>
+<div class="form-group full"><label>Experience / Internships</label><textarea name="experience" placeholder="Role, organization, responsibilities">{{ cv['experience'] if cv else '' }}</textarea></div>
+</div><div class="actions"><button class="primary-btn" type="submit">Save CV</button><a class="ghost-btn" href="/resume/preview">Preview CV</a></div></form>
+</div></section><footer><p>Student Career Recommendation System</p></footer></body></html>
