@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>{{ career }} | Career Details</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='resources.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}"></head>
+<body>
+<header><nav><div class="logo">CareerGuide</div><div><a href="/">Home</a> <a href="/favorites">Saved Careers</a> <a href="/history">History</a></div></nav></header>
+<section class="dashboard-page"><div class="dashboard-shell">
+<div class="dashboard-hero"><div class="eyebrow">{{ learning_resources.domain }}</div><h1>{{ career }}</h1><p>Career-specific learning resources and practical development ideas.</p>
+<div class="actions"><form method="POST" action="/favorite/{{ career }}"><button class="primary-btn" type="submit">{% if favorite %}Saved - click to unsave{% else %}Save Career{% endif %}</button></form><a class="ghost-btn" href="/favorites">My Saved Careers</a></div></div>
+<div class="career-panel"><h2>Recommended Learning</h2><div class="resource-list">{% for item in learning_resources.courses %}<a class="resource-link" href="{{ item.url }}" target="_blank" rel="noopener">{{ item.name }} - Open</a>{% endfor %}</div>
+<h2>Practical Practice</h2><div class="resource-list">{% for item in learning_resources.videos %}<a class="resource-link" href="{{ item.url }}" target="_blank" rel="noopener">{{ item.name }} - Open</a>{% endfor %}</div>
+<h2>Skills to Develop</h2><div class="skill-tags">{% for skill in learning_resources.skills %}<span>{{ skill }}</span>{% endfor %}</div>
+<h2>Project Idea</h2><p class="muted">{{ learning_resources.project }}</p></div>
+</div></section><footer><p>Student Career Recommendation System</p></footer></body></html>
