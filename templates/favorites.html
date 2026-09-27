@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Saved Careers</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body>
+<header><nav><div class="logo">CareerGuide</div><div><a href="/">Home</a> <a href="/profile">Profile</a> <a href="/history">History</a> <a href="/resume">CV Builder</a></div></nav></header>
+<section class="dashboard-page"><div class="dashboard-shell">
+<div class="dashboard-hero"><div class="eyebrow">Saved Careers</div><h1>Your <span>career shortlist.</span></h1></div>
+{% if favorites %}
+<div class="career-list">
+{% for item in favorites %}
+<div class="career-row"><div><h3>{{ item['career'] }}</h3><div class="muted">Saved {{ item['created_at'] }}</div></div><a class="small-btn" href="/career/{{ item['career'] }}">Explore</a></div>
+{% endfor %}
+</div>
+{% else %}
+<div class="panel"><h2>No saved careers yet</h2><p class="muted">Save a career from a recommendation or career details page.</p><a class="primary-btn" href="/assessment">Take Assessment</a></div>
+{% endif %}
+</div></section>
+<footer><p>Student Career Recommendation System</p></footer>
+</body></html>
