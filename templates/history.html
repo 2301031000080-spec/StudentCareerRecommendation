@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Assessment History</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"><link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}"></head>
+<body>
+<header><nav><div class="logo">CareerGuide</div><div><a href="/">Home</a> <a href="/profile">Profile</a> <a href="/favorites">Saved Careers</a> <a href="/resume">CV Builder</a></div></nav></header>
+<section class="dashboard-page"><div class="dashboard-shell">
+<div class="dashboard-hero"><div class="eyebrow">Assessment History</div><h1>Your career journey, <span>tracked.</span></h1><p>Every completed assessment is saved so you can revisit results and compare changes.</p></div>
+<div class="actions"><a class="primary-btn" href="/assessment">New Assessment</a><a class="ghost-btn" href="/compare">Compare Assessments</a></div>
+{% if history %}<div class="history-list" style="margin-top:20px">
+{% for item in history %}<div class="history-item"><div><div class="date">{{ item.date }}</div><h3>{{ item.top_career }}</h3><div class="muted">{{ item.interest }} • {{ item.goal }}</div><div class="score-pill">{{ item.score }}% match</div></div><a class="small-btn" href="/result/{{ item.id }}">View Result</a></div>{% endfor %}
+</div>{% else %}<div class="panel" style="margin-top:20px"><h2>No assessments yet</h2><p class="muted">Take your first assessment to start building your history.</p><a class="primary-btn" href="/assessment">Start Assessment</a></div>{% endif %}
+</div></section><footer><p>Student Career Recommendation System</p></footer></body></html>
