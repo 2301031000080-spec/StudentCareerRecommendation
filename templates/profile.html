@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>My Profile | Student Career Recommendation System</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}"></head>
+<body>
+<header><nav><div class="logo">CareerGuide</div><div><a href="/">Home</a> <a href="/history">History</a> <a href="/favorites">Saved Careers</a> <a href="/resume">CV Builder</a></div></nav></header>
+<section class="dashboard-page"><div class="dashboard-shell">
+<div class="dashboard-hero"><div class="eyebrow">Student Profile</div><h1>Welcome back, <span>{{ student["name"] }}</span></h1><p>Keep your academic details, interests and skills ready for future assessments.</p></div>
+<form method="POST" class="panel">
+<div class="form-grid">
+<div class="form-group full"><label>Name</label><input value="{{ student['name'] }}" disabled></div>
+<div class="form-group full"><label>Education</label><input name="education" value="{{ student['education'] }}" placeholder="e.g. BTech IT, 3rd Year"></div>
+<div class="form-group full"><label>Interests</label><textarea name="interests" placeholder="e.g. Data Science, Finance, Web Development">{{ student['interests'] }}</textarea></div>
+<div class="form-group full"><label>Skills</label><textarea name="skills" placeholder="e.g. Python, Excel, Communication">{{ student['skills'] }}</textarea></div>
+</div>
+<div class="actions"><button class="primary-btn" type="submit">Save Profile</button><a class="ghost-btn" href="/assessment">Retake Assessment</a></div>
+</form>
+</div></section>
+<footer><p>Student Career Recommendation System</p></footer></body></html>
