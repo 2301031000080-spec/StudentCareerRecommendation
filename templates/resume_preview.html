@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>{{ student['name'] }} - CV</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"><link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}"></head>
+<body>
+<section class="dashboard-page"><div class="dashboard-shell">
+<div class="actions print-actions"><a class="ghost-btn" href="/resume">Edit CV</a><button class="primary-btn" onclick="window.print()">Print / Save as PDF</button></div>
+<div class="resume-paper"><h1>{{ student['name'] }}</h1><div class="contact">{{ cv['phone'] }}{% if cv['email'] %} - {{ cv['email'] }}{% endif %}{% if cv['location'] %} - {{ cv['location'] }}{% endif %}</div>
+{% if cv['summary'] %}<div class="resume-section"><h2>PROFILE</h2><p>{{ cv['summary'] }}</p></div>{% endif %}
+{% if cv['education'] %}<div class="resume-section"><h2>EDUCATION</h2><p style="white-space:pre-line">{{ cv['education'] }}</p></div>{% endif %}
+{% if cv['skills'] %}<div class="resume-section"><h2>SKILLS</h2><p style="white-space:pre-line">{{ cv['skills'] }}</p></div>{% endif %}
+{% if cv['projects'] %}<div class="resume-section"><h2>PROJECTS</h2><p style="white-space:pre-line">{{ cv['projects'] }}</p></div>{% endif %}
+{% if cv['certifications'] %}<div class="resume-section"><h2>CERTIFICATIONS</h2><p style="white-space:pre-line">{{ cv['certifications'] }}</p></div>{% endif %}
+{% if cv['experience'] %}<div class="resume-section"><h2>EXPERIENCE</h2><p style="white-space:pre-line">{{ cv['experience'] }}</p></div>{% endif %}
+</div></div></section></body></html>
